@@ -10,7 +10,7 @@ export default function Search({ datas }) {
     return (
         <>
             <Head>
-                <title>Search | {q}</title>
+                <title>{`Search | ${q}`}</title>
             </Head>
             <Flex width={'100%'} flexDir={'column'} alignItems={'center'} height={'100vh'} overflowY={'auto'}>
                 <Heading pt={'2rem'} size={["sm", "sm", "lg", "lg"]}>Hasil Pencarian Untuk {`'${q}'`} ({datas?.results.length})</Heading>

@@ -1,8 +1,7 @@
 import { Flex, Heading, Image, Text, Avatar, Icon, UnorderedList, ListItem, Tooltip, OrderedList } from "@chakra-ui/react"
 import Head from "next/head"
 import { useRouter } from "next/router"
-import { SiCodechef } from 'react-icons/si'
-import { RiTimerLine } from 'react-icons/ri'
+import { SiCodechef, SiClockify } from 'react-icons/si'
 import { GiKnifeFork } from 'react-icons/gi'
 
 export default function Resep({ datas }) {
@@ -13,11 +12,11 @@ export default function Resep({ datas }) {
     return (
         <>
             <Head>
-                <title>{slug.toUpperCase()}</title>    
+                <title>{`Resep | ${slug.toUpperCase()}`}</title>    
             </Head>        
             <Flex overflowY={'auto'} height={'100vh'} justifyContent={'center'} p={'1rem'} width={'100%'}>
                 <Flex width={'80%'} flexDir={'column'} gap={'1rem'}>
-                    <Heading textAlign={'center'} size={'lg'} p={'0.5rem'}>{datas.results.title}</Heading>
+                    <Heading textAlign={'center'} size={['md', 'md', 'lg', 'lg']} p={'0.5rem'}>{datas.results.title}</Heading>
                     <Image backgroundSize={'cover'} width={'100%'} borderRadius={'0.5rem'} boxShadow={'dark-lg'} src={datas.results.thumb} alt={datas.results.title} />
                     <Flex justifyContent={'space-between'} p={'1rem'}>
                         <Flex alignItems={'center'} gap={'0.3rem'} >
@@ -37,7 +36,7 @@ export default function Resep({ datas }) {
                             <Text>Tingkat Kesulitan : {datas.results.difficulty}</Text>
                         </Flex>
                         <Flex alignItems={'center'}>
-                            <Icon as={RiTimerLine} boxSize={8} />
+                            <Icon as={SiClockify} boxSize={8} />
                             <Text>Waktu Yang Dibutuhkan : {datas.results.times}</Text>
                         </Flex>
                         <Flex alignItems={'center'}>
@@ -47,12 +46,12 @@ export default function Resep({ datas }) {
                     </Flex>
                     <Heading size={'md'}>Bahan & Alat</Heading>
                     <UnorderedList pb={'1rem'}>
-                        {datas.results.ingredient.map((value, index) => {
+                        {datas?.results.ingredient.map((value, index) => {
                             return(
                                 <ListItem key={index}>{value}</ListItem>
                             )
                         })}
-                        {datas.results.needItem.map((value, index) => {
+                        {datas?.results.needItem.map((value, index) => {
                             return(
                                 <ListItem key={index}>
                                     <Tooltip closeOnClick={false} placement="top-start" hasArrow label={<Image src={value.thumb_item} alt={value.item_name}/>}>
@@ -64,7 +63,7 @@ export default function Resep({ datas }) {
                     </UnorderedList>
                     <Heading size={'md'}>Cara Membuat</Heading>
                     <OrderedList pb={'1rem'}>
-                        {datas.results.step.map((value, index) => {
+                        {datas?.results.step.map((value, index) => {
                             return(
                                 <ListItem key={index}>{value.replace("1", "").replace("2", "").replace("3", "").replace("4", "")}</ListItem>
                             )

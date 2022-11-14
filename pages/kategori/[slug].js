@@ -10,10 +10,10 @@ export default function KategoriDetail({ datas }) {
     return (
         <>
             <Head>
-                <title>Kategori | {slug.replace("-", " ")}</title>
+                <title>{`Kategori | ${slug.replace("-", " ")}`}</title>
             </Head>
             <Grid templateColumns={["repeat(1, 1fr)", "repeat(2, 1fr)", "repeat(3, 1fr)", "repeat(3, 1fr)"]} p={'2rem'} gap={'1rem'} height={'100vh'} overflowY={'auto'}>
-                {datas.results.map((result, index) => {
+                {datas?.results.map((result, index) => {
                     return (
                         <GridItem key={index}>
                             <Card data={result} />

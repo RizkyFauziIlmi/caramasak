@@ -1,4 +1,3 @@
-import '../styles/globals.css'
 import { ChakraProvider, Flex, Spinner } from "@chakra-ui/react"
 import Navbar from '../components/Navbar'
 import { useEffect, useState } from 'react'

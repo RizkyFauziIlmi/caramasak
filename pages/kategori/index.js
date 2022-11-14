@@ -1,15 +1,15 @@
 import { Button, ListItem, UnorderedList } from "@chakra-ui/react"
-import { useRouter } from "next/router"
+import Link from "next/link"
 
 export default function Kategori({ datas }) {
-    const router = useRouter()
-
     return (
         <UnorderedList spacing={2} pl={"3rem"} pt={'2rem'}>
-            {datas.results.map((result, index) => {
+            {datas?.results.map((result, index) => {
                 return(
                     <ListItem key={index}>
-                        <Button variant={'link'} onClick={() => router.push(`/kategori/${result.key}`)}>{result.category}</Button>
+                        <Link href={`/kategori/${result.key}`}>
+                            <Button variant={'link'}>{result.category}</Button>
+                        </Link>
                     </ListItem>
                 )
             })}

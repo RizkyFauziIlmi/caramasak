@@ -1,4 +1,5 @@
 import { Flex, Image, Heading, Text, Button, Badge } from "@chakra-ui/react"
+import Link from "next/link"
 import { useRouter } from "next/router"
 import { GiKnifeFork } from 'react-icons/gi'
 import { RiTimerLine } from 'react-icons/Ri'
@@ -22,7 +23,9 @@ export default function Card({ data }) {
                     <Text>{data.serving}</Text>
                 </Flex>
             </Flex>
-            <Button colorScheme={'green'} onClick={() => router.push(`/resep/${data.key}`)}>Liat Resep</Button>
+            <Link href={`/resep/${data.key}`} style={{ width: "100%" }}>
+                <Button colorScheme={'green'} width={"100%"}>Liat Resep</Button>
+            </Link>
         </Flex>
     )
 }

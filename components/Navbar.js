@@ -20,7 +20,9 @@ export default function Navbar() {
                 <InputGroup>
                     <Input onChange={(e) => setInput(e.target.value)} />
                     <InputRightElement>
-                        <IconButton icon={<BsSearch />} onClick={() => router.push(`/search/${input}`)} />
+                        <Link href={`/search/${input}`}>
+                            <IconButton icon={<BsSearch />} />
+                        </Link>
                     </InputRightElement>
                 </InputGroup>
                 <Flex flexDir={'column'} gap={'0.5rem'} pt={'2rem'}>
@@ -35,7 +37,9 @@ export default function Navbar() {
                 <InputGroup>
                     <Input onChange={(e) => setInput(e.target.value)} />
                     <InputRightElement>
-                        <IconButton icon={<BsSearch />} onClick={() => router.push(`/search/${input}`)} />
+                        <Link href={`/search/${input}`}>
+                            <IconButton icon={<BsSearch />} />
+                        </Link>
                     </InputRightElement>
                 </InputGroup>
                 <IconButton icon={<AiOutlineMenu />} ref={btnRef} onClick={onOpen} />
