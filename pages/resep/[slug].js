@@ -16,32 +16,32 @@ export default function Resep({ datas }) {
             </Head>        
             <Flex overflowY={'auto'} height={'100vh'} justifyContent={'center'} p={'1rem'} width={'100%'}>
                 <Flex width={'80%'} flexDir={'column'} gap={'1rem'}>
-                    <Heading textAlign={'center'} size={['md', 'md', 'lg', 'lg']} p={'0.5rem'}>{datas.results.title}</Heading>
-                    <Image backgroundSize={'cover'} width={'100%'} borderRadius={'0.5rem'} boxShadow={'dark-lg'} src={datas.results.thumb} alt={datas.results.title} />
+                    <Heading textAlign={'center'} size={['md', 'md', 'lg', 'lg']} p={'0.5rem'}>{datas?.results.title}</Heading>
+                    <Image backgroundSize={'cover'} width={'100%'} borderRadius={'0.5rem'} boxShadow={'dark-lg'} src={datas?.results.thumb} alt={datas?.results.title} />
                     <Flex justifyContent={'space-between'} p={'1rem'}>
                         <Flex alignItems={'center'} gap={'0.3rem'} >
-                            <Avatar name={datas.results.author.user} />
+                            <Avatar name={datas?.results.author.user} />
                             <Flex flexDir={'column'}>
-                                <Text>{datas.results.author.user}</Text>
-                                <Text>Di posting : {datas.results.author.datePublished}</Text>
+                                <Text>{datas?.results.author.user}</Text>
+                                <Text>Di posting : {datas?.results.author.datePublished}</Text>
                             </Flex>
                         </Flex>
                     </Flex>
                     <Heading size={'md'}>Deskripsi</Heading>
-                    <Text pb={'1rem'}>{datas.results.desc}</Text>
+                    <Text pb={'1rem'}>{datas?.results.desc}</Text>
                     <Heading size={'md'}>Keterangan</Heading>
                     <Flex flexDir={'column'} gap={'0.5rem'} pb={'1rem'}>
                         <Flex alignItems={'center'}>
                             <Icon as={SiCodechef} boxSize={8} />
-                            <Text>Tingkat Kesulitan : {datas.results.difficulty}</Text>
+                            <Text>Tingkat Kesulitan : {datas?.results.difficulty}</Text>
                         </Flex>
                         <Flex alignItems={'center'}>
                             <Icon as={SiClockify} boxSize={8} />
-                            <Text>Waktu Yang Dibutuhkan : {datas.results.times}</Text>
+                            <Text>Waktu Yang Dibutuhkan : {datas?.results.times}</Text>
                         </Flex>
                         <Flex alignItems={'center'}>
                             <Icon as={GiKnifeFork} boxSize={8} />
-                            <Text>Porsi : {datas.results.servings}</Text>
+                            <Text>Porsi : {datas?.results.servings}</Text>
                         </Flex>
                     </Flex>
                     <Heading size={'md'}>Bahan & Alat</Heading>
