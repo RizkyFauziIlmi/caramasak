@@ -1,6 +1,4 @@
-import { Grid, Text, GridItem, Flex, Image, Heading, Badge, Button } from "@chakra-ui/react"
-import { RiTimerLine } from 'react-icons/ri'
-import { GiKnifeFork } from 'react-icons/gi'
+import { Grid, GridItem } from "@chakra-ui/react"
 import { useRouter } from "next/router"
 import Head from "next/head"
 import Card from "../components/Card"

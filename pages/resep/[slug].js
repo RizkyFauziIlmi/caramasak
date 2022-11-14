@@ -1,8 +1,6 @@
-import { Flex, Heading, Image, Text, Badge, Avatar, VStack, Icon, UnorderedList, ListItem, Tooltip, OrderedList } from "@chakra-ui/react"
-import axios from "axios"
+import { Flex, Heading, Image, Text, Avatar, Icon, UnorderedList, ListItem, Tooltip, OrderedList } from "@chakra-ui/react"
 import Head from "next/head"
 import { useRouter } from "next/router"
-import { useEffect, useState } from "react"
 import { SiCodechef } from 'react-icons/si'
 import { RiTimerLine } from 'react-icons/ri'
 import { GiKnifeFork } from 'react-icons/gi'
