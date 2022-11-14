@@ -2,7 +2,7 @@ import { Flex, Image, Heading, Text, Button, Badge } from "@chakra-ui/react"
 import Link from "next/link"
 import { useRouter } from "next/router"
 import { GiKnifeFork } from 'react-icons/gi'
-import { RiTimerLine } from 'react-icons/Ri'
+import { RiTimerLine } from 'react-icons/ri'
 
 export default function Card({ data }) {
     const router = useRouter()
