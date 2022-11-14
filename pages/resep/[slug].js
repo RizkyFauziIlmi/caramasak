@@ -12,7 +12,7 @@ export default function Resep({ datas }) {
     return (
         <>
             <Head>
-                <title>{`Resep | ${slug.toUpperCase()}`}</title>    
+                <title>{`Resep | ${slug?.toUpperCase()}`}</title>    
             </Head>        
             <Flex overflowY={'auto'} height={'100vh'} justifyContent={'center'} p={'1rem'} width={'100%'}>
                 <Flex width={'80%'} flexDir={'column'} gap={'1rem'}>

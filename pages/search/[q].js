@@ -15,7 +15,7 @@ export default function Search({ datas }) {
             <Flex width={'100%'} flexDir={'column'} alignItems={'center'} height={'100vh'} overflowY={'auto'}>
                 <Heading pt={'2rem'} size={["sm", "sm", "lg", "lg"]}>Hasil Pencarian Untuk {`'${q}'`} ({datas?.results.length})</Heading>
                 <Grid templateColumns={["repeat(1, 1fr)", "repeat(2, 1fr)", "repeat(3, 1fr)", "repeat(3, 1fr)"]} p={'2rem'} gap={'1rem'}>
-                    {datas.results.map((result, index) => {
+                    {datas?.results.map((result, index) => {
                         return (
                             <GridItem key={index}>
                                 <Card data={result} />
