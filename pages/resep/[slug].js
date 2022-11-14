@@ -77,7 +77,7 @@ export default function Resep({ datas }) {
 
 export async function getStaticPaths() {
     return {
-        paths: [{ params: { slug: "cara-membuat-donat" } }],
+        paths: [{ params: { slug: "cara-membuat-donat" || null } }],
         fallback: true
     }
 }

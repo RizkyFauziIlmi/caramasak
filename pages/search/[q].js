@@ -31,7 +31,7 @@ export default function Search({ datas }) {
 export async function getStaticPaths() {
     return {
         paths: [
-            { params: { q: "coto" } }
+            { params: { q: 'babi' || null } }
         ],
         fallback: true
     }
