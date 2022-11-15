@@ -2,7 +2,7 @@ import { Flex, Heading, IconButton, Button, Input, InputGroup, InputRightElement
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useRef, useState } from "react";
-import { BsSearch } from 'react-icons/bs'
+import { BsSearch, BsSun, BsMoon } from 'react-icons/bs'
 import { AiOutlineMenu } from 'react-icons/ai'
 
 export default function Navbar() {
@@ -30,6 +30,7 @@ export default function Navbar() {
                     <Button variant={router.pathname === "/" ? 'solid' : 'ghost'} onClick={() => router.push('/')}>Home</Button>
                     <Button variant={router.pathname.includes("kategori") ? 'solid' : 'ghost'} onClick={() => router.push('/kategori')}>Kategori</Button>
                     <Button variant={router.pathname.includes("artikel") ? 'solid' : 'ghost'} onClick={() => router.push('/artikel')}>Artikel</Button>
+                    <IconButton onClick={toggleColorMode} icon={colorMode === "dark" ? <BsSun /> : <BsMoon />} variant={'outline'} />
                 </Flex>
             </Flex>
             <Flex justifyContent={'space-between'} gap={'0.5rem'} alignItems={'center'} display={["flex", "flex", "none", "none"]} p={'1rem'} boxShadow={'dark-lg'}>
@@ -60,10 +61,11 @@ export default function Navbar() {
                                 <Button variant={router.pathname === "/" ? 'solid' : 'ghost'} onClick={() => router.push('/')}>Home</Button>
                                 <Button variant={router.pathname.includes("kategori") ? 'solid' : 'ghost'} onClick={() => router.push('/kategori')}>Kategori</Button>
                                 <Button variant={router.pathname.includes("artikel") ? 'solid' : 'ghost'} onClick={() => router.push('/artikel')}>Artikel</Button>
+                                <IconButton onClick={toggleColorMode} icon={colorMode === "dark" ? <BsSun /> : <BsMoon />} variant={'outline'} />
                             </Flex>
                         </DrawerBody>
                     </DrawerContent>
-                </Drawer>          
+                </Drawer>
             </Flex>
         </>
     )

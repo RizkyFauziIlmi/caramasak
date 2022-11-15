@@ -26,10 +26,10 @@ export default function KategoriDetail({ datas }) {
 }
 
 export async function getStaticPaths() {
-    const response = await fetch("https://resep-api-theta.vercel.app/api/category/recipes") 
+    const response = await fetch("https://resep-api-theta.vercel.app/api/category/recipes")
     const data = await response.json()
     const paths = data.results.map((result) => ({
-        params : { slug: result.key }
+        params: { slug: result.key }
     }))
 
     return {

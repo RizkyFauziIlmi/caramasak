@@ -5,7 +5,7 @@ export default function Kategori({ datas }) {
     return (
         <UnorderedList spacing={2} pl={"3rem"} pt={'2rem'}>
             {datas?.results.map((result, index) => {
-                return(
+                return (
                     <ListItem key={index}>
                         <Link href={`/kategori/${result.key}`}>
                             <Button variant={'link'}>{result.category}</Button>

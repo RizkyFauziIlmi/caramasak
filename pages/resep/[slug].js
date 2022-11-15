@@ -12,8 +12,8 @@ export default function Resep({ datas }) {
     return (
         <>
             <Head>
-                <title>{`Resep | ${slug?.toUpperCase()}`}</title>    
-            </Head>        
+                <title>{`Resep | ${slug?.toUpperCase()}`}</title>
+            </Head>
             <Flex overflowY={'auto'} height={'100vh'} justifyContent={'center'} p={'1rem'} width={'100%'}>
                 <Flex width={'80%'} flexDir={'column'} gap={'1rem'}>
                     <Heading textAlign={'center'} size={['md', 'md', 'lg', 'lg']} p={'0.5rem'}>{datas?.results.title}</Heading>
@@ -47,15 +47,15 @@ export default function Resep({ datas }) {
                     <Heading size={'md'}>Bahan & Alat</Heading>
                     <UnorderedList pb={'1rem'}>
                         {datas?.results.ingredient.map((value, index) => {
-                            return(
+                            return (
                                 <ListItem key={index}>{value}</ListItem>
                             )
                         })}
                         {datas?.results.needItem.map((value, index) => {
-                            return(
+                            return (
                                 <ListItem key={index}>
-                                    <Tooltip closeOnClick={false} placement="top-start" hasArrow label={<Image src={value.thumb_item} alt={value.item_name}/>}>
-                                        <Text>{value.item_name}</Text>    
+                                    <Tooltip closeOnClick={false} placement="top-start" hasArrow label={<Image src={value.thumb_item} alt={value.item_name} />}>
+                                        <Text>{value.item_name}</Text>
                                     </Tooltip>
                                 </ListItem>
                             )
@@ -64,7 +64,7 @@ export default function Resep({ datas }) {
                     <Heading size={'md'}>Cara Membuat</Heading>
                     <OrderedList pb={'1rem'}>
                         {datas?.results.step.map((value, index) => {
-                            return(
+                            return (
                                 <ListItem key={index}>{value.replace("1", "").replace("2", "").replace("3", "").replace("4", "")}</ListItem>
                             )
                         })}

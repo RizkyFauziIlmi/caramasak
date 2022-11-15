@@ -9,14 +9,14 @@ export default function IsiArtikel({ datas }) {
     return (
         <>
             <Head>
-                <title>{key}</title>    
-            </Head>        
+                <title>{key}</title>
+            </Head>
             <Flex width={"100vw"} justifyContent={'center'} overflowY={'auto'} height={'100vh'}>
                 <Flex flexDir={'column'} width={'80%'}>
                     <Heading size={['md', 'md', 'lg', 'lg']} p={'1rem'} textAlign={'center'}>{datas?.results.title}</Heading>
                     <Image boxShadow={'dark-lg'} borderRadius={"0.5rem"} src={datas?.results.thumb} alt={datas?.results.title} />
                     <Flex p={'1rem'} alignItems={'center'} gap={'0.5rem'}>
-                        <Avatar name={datas?.results.author}/>
+                        <Avatar name={datas?.results.author} />
                         <Flex flexDir={'column'}>
                             <Text>{datas?.results.author}</Text>
                             <Text>{datas?.results.date_published}</Text>

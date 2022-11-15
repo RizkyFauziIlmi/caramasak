@@ -1,11 +1,8 @@
 import { Grid, GridItem } from "@chakra-ui/react"
-import { useRouter } from "next/router"
 import Head from "next/head"
 import Card from "../components/Card"
 
 export default function Home({ datas }) {
-  const router = useRouter()
-
   return (
     <>
       <Head>
@@ -15,7 +12,7 @@ export default function Home({ datas }) {
         {datas?.results.map((result, index) => {
           return (
             <GridItem key={index}>
-              <Card data={result}/>
+              <Card data={result} />
             </GridItem>
           )
         })}

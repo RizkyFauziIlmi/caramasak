@@ -10,11 +10,11 @@ export default function ArtikelDetail({ datas }) {
     return (
         <>
             <Head>
-                <title>{`Artikel | ${slug}`}</title>    
-            </Head>        
+                <title>{`Artikel | ${slug}`}</title>
+            </Head>
             <UnorderedList spacing={2} pl={"3rem"} pb={'1rem'} pt={'2rem'} overflowX={'auto'}>
                 {datas?.results.map((result, index) => {
-                    return(
+                    return (
                         <ListItem key={index}>
                             <Link href={`/artikel/${slug}/${result.key}`}>
                                 <Button variant={'link'}>{result.key}</Button>
@@ -31,7 +31,7 @@ export async function getStaticPaths() {
     const response = await fetch("https://resep-api-theta.vercel.app/api/category/article")
     const data = await response.json()
     const paths = data.results.map((result) => ({
-        params : { slug: result.key }
+        params: { slug: result.key }
     }))
 
     return {

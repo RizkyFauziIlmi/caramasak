@@ -1,12 +1,9 @@
 import { Flex, Image, Heading, Text, Button, Badge } from "@chakra-ui/react"
 import Link from "next/link"
-import { useRouter } from "next/router"
 import { GiKnifeFork } from 'react-icons/gi'
 import { RiTimerLine } from 'react-icons/ri'
 
 export default function Card({ data }) {
-    const router = useRouter()
-    
     return (
         <Flex flexDir={'column'} gap={'0.5rem'} boxShadow={"dark-lg"} p={'1rem'}>
             <Image boxShadow={'lg'} src={data.thumb} borderRadius={'0.5rem'} alt={data.title} />

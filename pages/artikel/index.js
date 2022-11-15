@@ -10,7 +10,7 @@ export default function Artikel({ datas }) {
             </Head>
             <UnorderedList spacing={2} pl={"3rem"} pt={'2rem'}>
                 {datas?.results.map((result, index) => {
-                    return(
+                    return (
                         <ListItem key={index}>
                             <Link href={`/artikel/${result.key}`}>
                                 <Button variant={'link'}>{result.title}</Button>
