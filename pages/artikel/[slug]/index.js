@@ -12,7 +12,7 @@ export default function ArtikelDetail({ datas }) {
             <Head>
                 <title>{`Artikel | ${slug}`}</title>    
             </Head>        
-            <UnorderedList spacing={2} pl={"3rem"} pt={'2rem'}>
+            <UnorderedList spacing={2} pl={"3rem"} pb={'1rem'} pt={'2rem'} overflowX={'auto'}>
                 {datas?.results.map((result, index) => {
                     return(
                         <ListItem key={index}>
