@@ -1,7 +1,7 @@
 import { Flex, Heading, IconButton, Button, Input, InputGroup, InputRightElement, useDisclosure, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerOverlay, useColorMode } from "@chakra-ui/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { BsSearch, BsSun, BsMoon } from 'react-icons/bs'
 import { AiOutlineMenu } from 'react-icons/ai'
 
@@ -10,7 +10,30 @@ export default function Navbar() {
     const [input, setInput] = useState("")
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = useRef()
+    const searchRef = useRef()
+    const [onSearch, setOnSearch] = useState(false)
     const { toggleColorMode, colorMode } = useColorMode()
+
+    useEffect(() => {
+        const handleKeyboard = (event) => {
+            if (event.key === "Enter") {
+                setOnSearch(true)
+                searchRef.current.click()
+            }
+        }
+        const handleComplete = (url) => (url === router.asPath) && setOnSearch(false);
+
+        router.events.on('routeChangeComplete', handleComplete)
+
+        window.addEventListener("keydown", handleKeyboard)
+
+        return () => {
+            window.removeEventListener("keydown", handleKeyboard)
+            router.events.off('routeChangeComplete', handleComplete)
+        }
+
+    }, [router.asPath, router.events])
+
 
     return (
         <>
@@ -22,7 +45,7 @@ export default function Navbar() {
                     <Input onChange={(e) => setInput(e.target.value)} />
                     <InputRightElement>
                         <Link href={`/search/${input}`}>
-                            <IconButton icon={<BsSearch />} />
+                            <IconButton icon={<BsSearch />} ref={searchRef} />
                         </Link>
                     </InputRightElement>
                 </InputGroup>
@@ -41,7 +64,7 @@ export default function Navbar() {
                     <Input onChange={(e) => setInput(e.target.value)} />
                     <InputRightElement>
                         <Link href={`/search/${input}`}>
-                            <IconButton icon={<BsSearch />} />
+                            <IconButton icon={<BsSearch />} isLoading={onSearch ? true : false} onClick={() => setOnSearch(true)} />
                         </Link>
                     </InputRightElement>
                 </InputGroup>
