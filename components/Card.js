@@ -9,7 +9,7 @@ export default function Card({ data }) {
     
     return (
         <Flex flexDir={'column'} gap={'0.5rem'} boxShadow={"dark-lg"} p={'1rem'}>
-            <Image src={data.thumb} borderRadius={'0.5rem'} alt={data.title} />
+            <Image boxShadow={'lg'} src={data.thumb} borderRadius={'0.5rem'} alt={data.title} />
             {data.difficulty === "Mudah" ? <Badge width={'max-content'} colorScheme={'green'}>{data.difficulty}</Badge> : ""}
             {data.difficulty === "Cukup Rumit" ? <Badge width={'max-content'} colorScheme={'red'}>{data.difficulty}</Badge> : ""}
             <Heading size={'xs'} noOfLines={2}>{data.title}</Heading>

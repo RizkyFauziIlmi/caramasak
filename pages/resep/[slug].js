@@ -23,7 +23,7 @@ export default function Resep({ datas }) {
                             <Avatar name={datas?.results.author.user} />
                             <Flex flexDir={'column'}>
                                 <Text>{datas?.results.author.user}</Text>
-                                <Text>Di posting : {datas?.results.author.datePublished}</Text>
+                                <Text>{datas?.results.author.datePublished}</Text>
                             </Flex>
                         </Flex>
                     </Flex>
